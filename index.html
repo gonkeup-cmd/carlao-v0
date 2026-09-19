@@ -56,6 +56,30 @@
     .display{font-family:"Barlow Condensed",Arial Narrow,sans-serif;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance}
     .skip{position:absolute;left:12px;top:-100px;background:var(--red);color:#fff;padding:10px 14px;z-index:99}.skip:focus{top:12px}
 
+    /* HERO MODERN STYLES */
+    .hero-kicker{display:inline-flex;align-items:center;gap:10px;font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.12em;color:#fff;font-weight:600;margin-bottom:12px;text-transform:uppercase}
+    .hero-kicker:before{content:"";display:block;width:28px;height:2px;background:#D90429;flex-shrink:0}
+    .hero-title{font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:clamp(2.4rem,3.6vw,3.8rem);font-weight:800;line-height:1.02;letter-spacing:-.035em;color:#fff;margin:0 0 16px 0;text-transform:none}
+    .hero-title .red-accent{color:#D90429}
+    .hero-lede{font-family:"IBM Plex Sans",Arial,sans-serif;font-size:clamp(.95rem,1.15vw,1.1rem);line-height:1.45;color:#B2C2C6;max-width:480px;margin:0 0 24px 0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .btn-hero-primary{background:#C8102E;color:#fff;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 22px;font-weight:700;font-size:.92rem;border-radius:4px;transition:background .2s ease}
+    .btn-hero-primary:hover{background:#ed183b}
+    .btn-hero-ghost{background:rgba(3,10,18,.45);color:#fff;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:11px 20px;font-weight:700;font-size:.88rem;border:1px solid rgba(255,255,255,.3);border-radius:4px;transition:background .2s ease,border-color .2s ease}
+    .btn-hero-ghost:hover{background:#fff;color:var(--navy-950)}
+    .hero-bottom-strip{margin-top:32px;display:flex;align-items:center;justify-content:space-between;position:relative}
+    .hero-discover-label{display:none}
+    .hero-stats-row{display:flex;align-items:center;gap:18px}
+    .hero-stat-item{display:flex;align-items:center;gap:10px}
+    .hero-avatar-circles{display:flex;align-items:center}
+    .hero-avatar-circles span{width:22px;height:22px;border-radius:50%;border:2px solid #030a12;margin-right:-8px;display:inline-block}
+    .hero-avatar-circles .c1{background:#455A64}
+    .hero-avatar-circles .c2{background:#C8102E}
+    .hero-avatar-circles .c3{background:#C5A059}
+    .hero-stat-text strong{display:block;color:#fff;font-size:.92rem;font-weight:800;line-height:1.1}
+    .hero-stat-text small{display:block;color:#8C9EA3;font-size:.68rem;line-height:1.2;white-space:nowrap}
+    .hero-stat-sep{width:1px;height:28px;background:rgba(255,255,255,.22)}
+
     /* HEADER & BRAND */
     header{position:sticky;top:0;z-index:20;transition:transform .35s cubic-bezier(.2,.8,.2,1);background:rgba(6,26,42,.97);color:#fff;border-bottom:1px solid rgba(255,255,255,.16)}
     header.is-hidden{transform:translateY(-105%);pointer-events:none}
@@ -87,8 +111,8 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:11px 18px;border:1px solid transparent;text-decoration:none;font-weight:700;cursor:pointer;border-radius:12px;font-size:.85rem;transition:background .2s ease,border-color .2s ease}
     .btn-primary{background:var(--red);color:#fff}.btn-primary:hover{background:#ed493d}
     .btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}.btn-ghost:hover{background:#fff;color:var(--navy-950)}
-    .hero-specs{color:#fff;text-shadow:none;background:rgba(3,12,20,.78);border:1px solid rgba(255,255,255,.24);border-radius:10px;padding:10px 14px;max-width:max-content;display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:20px;font-size:.74rem}
-    .hero-specs span{color:#fff}.hero-specs b{color:#FF8179;font-weight:700}
+    .hero-specs{color:#B6C8CC;text-shadow:none;border-top:1px solid rgba(255,255,255,.24);padding-top:18px;margin-top:26px;display:flex;flex-wrap:wrap;gap:14px 22px;font-size:.76rem;width:100%}
+    .hero-specs span{color:#CFDCE0;display:inline-flex;align-items:center;gap:6px}.hero-specs b{color:#fff;font-weight:700}
     .hero-campaign-side{position:absolute;right:28px;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center;color:#D5E4E6;font:500 .62rem "IBM Plex Mono";letter-spacing:.14em;display:flex;align-items:center;gap:12px;pointer-events:none}
     .hero-campaign-line{display:block;width:40px;height:2px;background:var(--red)}
     .hero-scroll{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);color:#fff;text-decoration:none;font:500 .62rem "IBM Plex Mono";letter-spacing:.12em;display:flex;align-items:center;gap:10px;opacity:.85}
@@ -284,18 +308,29 @@
       .brand-sep{height:24px}
       .bosch-logo-image{width:30px;height:30px}
       .header-cta{font-size:.76rem;padding:8px 12px}
-      .hero-campaign{min-height:calc(100svh - 64px);height:auto;background-position:58% center}
-      .hero-campaign-shade{background:linear-gradient(180deg,rgba(3,12,20,.78) 0%,rgba(3,12,20,.22) 42%,rgba(3,12,20,.92) 96%),linear-gradient(90deg,rgba(3,12,20,.38),rgba(3,12,20,.08))}
-      .hero-campaign .hero-in{align-items:center;justify-content:flex-start;padding:54px 0 60px;text-align:left}
-      .hero-campaign .hero-copy{max-width:100%;width:100%;display:flex;flex-direction:column;align-items:flex-start}
-      .hero-campaign .hero-kicker{font-size:.66rem;letter-spacing:.08em;margin-bottom:11px}
-      .hero-campaign .hero-kicker:before{width:22px}
-      .hero-campaign .hero-location{font-size:.6rem;margin-bottom:18px}
-      .hero-campaign h1{font-size:clamp(2.6rem,12.5vw,4.4rem);line-height:.88;margin:0 0 18px;word-break:break-word}
-      .hero-campaign .hero-lede{font-size:1rem;line-height:1.45;max-width:100%;margin:0 0 22px}
-      .hero-campaign .actions{gap:10px;width:100%}
-      .hero-campaign .btn{min-height:48px;padding:11px 16px;font-size:.82rem;width:100%;justify-content:center}
-      .hero-campaign .hero-specs{width:100%;justify-content:flex-start;gap:8px 12px;margin-top:20px;padding:10px 12px;font-size:.68rem}
+      .desktop-break{display:none}
+      .title-line{display:block;white-space:nowrap}
+      .hero-campaign{min-height:calc(100svh - 64px);height:calc(100svh - 64px);background-image:url("assets/img/hero-1920.webp");background-size:cover;background-position:62% 20%;padding:0;display:flex;align-items:stretch;position:relative;box-sizing:border-box}
+      .hero-campaign-shade{background:linear-gradient(90deg,rgba(3,10,18,.88) 0%,rgba(3,10,18,.7) 46%,rgba(3,10,18,.15) 78%,rgba(3,10,18,.3) 100%),linear-gradient(180deg,rgba(3,10,18,.65) 0%,transparent 35%,rgba(3,10,18,.92) 100%)}
+      .hero-campaign .hero-in{width:100%;height:100%;padding:22px 18px 18px;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box}
+      .hero-campaign .hero-copy{width:100%;height:100%;display:flex;flex-direction:column;justify-content:space-between;max-width:100%}
+      .hero-top-block{display:flex;flex-direction:column;align-items:flex-start}
+      .hero-kicker{font-size:.65rem;letter-spacing:.1em;margin-bottom:10px;color:#D90429}
+      .hero-kicker:before{width:26px}
+      .hero-title{font-size:clamp(2.35rem, 8.8vw, 2.75rem);line-height:.95;letter-spacing:-.035em;margin:0 0 14px 0}
+      .hero-lede{font-size:.88rem;line-height:1.42;color:#B2C2C6;max-width:320px;margin:0 0 18px 0}
+      .hero-actions{display:flex;flex-direction:column;gap:10px;width:100%}
+      .btn-hero-primary{height:48px;min-height:48px;width:100%;justify-content:center;font-size:.92rem}
+      .btn-hero-ghost{height:46px;min-height:46px;width:100%;justify-content:center;font-size:.88rem}
+      .hero-bottom-strip{display:flex;align-items:flex-end;justify-content:space-between;position:relative;padding-left:20px;margin-top:16px}
+      .hero-discover-label{display:flex;position:absolute;left:-4px;bottom:18px;transform:rotate(-90deg);transform-origin:left bottom;font-size:.52rem;letter-spacing:.16em;white-space:nowrap;gap:6px}
+      .hero-discover-label span{transform:rotate(90deg);display:inline-block;font-size:.68rem}
+      .hero-stats-row{display:flex;align-items:center;gap:14px;width:100%}
+      .hero-stat-item{gap:8px}
+      .hero-avatar-circles span{width:20px;height:20px;margin-right:-7px}
+      .hero-stat-text strong{font-size:.92rem}
+      .hero-stat-text small{font-size:.66rem}
+      .floating-wa{background:#C8102E;border-radius:8px;width:48px;height:48px;bottom:16px;right:16px}
       .hero-scroll{display:none}
 
       /* Sintomas */
@@ -392,7 +427,38 @@
     </div>
   </header>
   <main id="conteudo">
-    <section class="hero hero-campaign" id="top"><div class="hero-campaign-shade"></div><div class="wrap hero-in"><div class="hero-copy"><div class="hero-kicker">Carlão Auto Center · Jeep em Araraquara</div><p class="hero-location">ARARAQUARA / SP · BOSCH CAR SERVICE</p><h1 class="display">Seu Jeep falhou.<br><span>Vamos achar o motivo.</span></h1><p class="hero-lede">Diagnóstico e manutenção para Jeep, com teste, explicação e orçamento antes do reparo.</p><div class="actions"><a class="btn btn-primary" data-cta="hero-whatsapp" href="https://wa.me/5516991694883?text=Olá%2C%20quero%20falar%20sobre%20meu%20Jeep." target="_blank" rel="noopener">Descrever o defeito</a></div><div class="hero-specs"><span><b>60 anos</b> em Araraquara</span><span><b>3 scanners</b> na oficina</span><span><b>Orçamento</b> antes do serviço</span></div></div></div></section>
+    <section class="hero hero-campaign" id="top">
+      <div class="hero-campaign-shade"></div>
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <div class="hero-top-block">
+            <div class="hero-kicker">CARLÃO AUTO CENTER · ARARAQUARA</div>
+            <h1 class="hero-title"><span class="title-line">Diagnóstico </span><span class="title-line">certo.</span><br class="desktop-break"><span class="title-line red-accent">Tranquilidade </span><span class="title-line red-accent">para você.</span></h1>
+            <p class="hero-lede">Há 60 anos cuidando de carros em Araraquara com orçamento aberto, equipe treinada e o risco do lado da oficina.</p>
+            <div class="hero-actions">
+              <a class="btn btn-hero-primary" data-cta="hero-whatsapp" href="https://wa.me/5516991694883?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20meu%20Jeep." target="_blank" rel="noopener">
+                Falar no WhatsApp
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </a>
+              <a class="btn btn-hero-ghost" href="#servicos">Conhecer serviços →</a>
+            </div>
+          </div>
+          <div class="hero-bottom-strip">
+            <div class="hero-discover-label">ROLE PARA DESCOBRIR <span>⌄</span></div>
+            <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <div class="hero-avatar-circles" aria-hidden="true"><span class="c1"></span><span class="c2"></span><span class="c3"></span></div>
+                <div class="hero-stat-text"><strong>60 anos</strong><small>de oficina em Araraquara</small></div>
+              </div>
+              <div class="hero-stat-sep" aria-hidden="true"></div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-text"><strong>15 pessoas</strong><small>na equipe</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="symptoms symptoms-rebuilt" id="sintomas"><div class="wrap symptoms-shell"><div class="symptoms-intro"><p class="eyebrow">Quando o Jeep dá sinal</p><h2 class="display">Qual destes sinais apareceu no seu Jeep?</h2><p class="symptoms-lede">O mesmo aviso pode ter causas diferentes. O teste certo evita trocar peça por tentativa.</p><div class="consultor-note"><span class="mono">O QUE VALE OBSERVAR</span><p>Anote quando acontece: motor frio ou quente, trânsito ou estrada, aceleração ou marcha lenta. Esse detalhe encurta o caminho.</p><span class="note-line"></span></div></div><div class="symptoms-cards"><article class="symptom-card" aria-label="Sintoma Jeep"><span class="symptom-index">A1</span><h3>A luz de injeção voltou depois do scanner</h3><p>Apagar o código não corrige o defeito. É preciso ler os parâmetros e reproduzir a falha no sistema certo.</p></article><article class="symptom-card" aria-label="Sintoma Jeep"><span class="symptom-index">A2</span><h3>O nível de óleo baixa no 2.0 ou 2.4 MultiAir</h3><p>Medimos o consumo e verificamos o conjunto antes de indicar desmontagem ou troca de componente.</p></article><article class="symptom-card" aria-label="Sintoma Jeep"><span class="symptom-index">A3</span><h3>O automático de 9 marchas dá tranco</h3><p>Conferimos fluido, nível na temperatura correta, adaptações e mecatrônica. Resetar não é diagnóstico.</p></article><article class="symptom-card" aria-label="Sintoma Jeep"><span class="symptom-index">A4</span><h3>O 2.0 turbodiesel perdeu força ou fumaça</h3><p>Avaliamos DPF, EGR e sensores. Regeneração interrompida não se resolve trocando sensor no escuro.</p></article><article class="symptom-card" aria-label="Sintoma Jeep"><span class="symptom-index">A5</span><h3>A suspensão dianteira começou a bater</h3><p>Bandeja, bieleta, coxim e batente produzem ruídos parecidos. O teste localiza a folga antes da desmontagem.</p></article><article class="symptom-card" aria-label="Sintoma Jeep"><span class="symptom-index">A6</span><h3>O ar-condicionado para de gelar no trânsito</h3><p>Testamos o arrefecimento e o funcionamento sob carga. Nem sempre falta gás.</p></article></div><article class="symptom-card symptom-other" aria-label="Sintoma Jeep"><span class="symptom-index">A7</span><h3>Outro sintoma no seu Jeep</h3><p>Conte o que está acontecendo. Modelo, ano e condição em que o defeito aparece já ajudam no primeiro atendimento.</p></article><div class="section-cta"><p>Reconheceu algum desses sinais?</p><a class="btn btn-primary" href="https://wa.me/5516991694883?text=Olá%2C%20meu%20Jeep%20apresenta%20um%20desses%20sintomas.%20Gostaria%20de%20agendar%20um%20diagnóstico." target="_blank" rel="noopener">Falar sobre meu sintoma</a></div></div></section>
 
@@ -400,7 +466,7 @@
     <section class="immersive-intro immersive-rebuilt" aria-label="Especialização em Jeep"><div class="wrap"><div class="immersive-intro-grid"><article class="immersive-card"><picture><source type="image/avif" srcset="assets/img/diagnostico-480.avif 480w, assets/img/diagnostico-700.avif 700w, assets/img/diagnostico-1000.avif 1000w" sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 1440px) 50vw, 672px"><img class="immersive-photo" src="assets/img/diagnostico-700.webp" srcset="assets/img/diagnostico-480.webp 480w, assets/img/diagnostico-700.webp 700w, assets/img/diagnostico-1000.webp 1000w" sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 1440px) 50vw, 672px" width="1000" height="667" loading="lazy" decoding="async" alt="Diagnóstico eletrônico em um Jeep"></picture><div class="immersive-card-copy"><p class="eyebrow">Antes de comprar peça</p><h3>Código de erro não fecha diagnóstico.</h3><p>Usamos três scanners e testes na condição em que o defeito aparece. Primeiro encontramos a causa. Depois falamos da peça.</p></div></article><article class="immersive-card"><picture><source type="image/avif" srcset="assets/img/oficina-480.avif 480w, assets/img/oficina-700.avif 700w, assets/img/oficina-900.avif 900w" sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 1440px) 50vw, 672px"><img class="immersive-photo" src="assets/img/oficina-700.webp" srcset="assets/img/oficina-480.webp 480w, assets/img/oficina-700.webp 700w, assets/img/oficina-900.webp 900w" sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 1440px) 50vw, 672px" width="900" height="675" loading="lazy" decoding="async" alt="Jeep no elevador em uma oficina"></picture><div class="immersive-card-copy"><p class="eyebrow">Você acompanha o serviço</p><h3>Tudo fica explicado antes de aprovar.</h3><p>Falamos direto sobre o reparo, item por item. O pagamento fica para a entrega.</p></div></article></div><div class="immersive-quote"><strong>“Peça trocada sem teste vira custo para você.”</strong><span>Por isso o diagnóstico vem antes do orçamento.</span></div></div></section>
 
 
-    <div class="proof-strip"><div class="wrap proof-in"><div class="proof"><strong>40 anos</strong><span>com Carlos Cesar Lapena na administração</span></div><div class="proof"><strong>200+</strong><span>certificados reunidos pela equipe</span></div><div class="proof"><strong>15</strong><span>colaboradores, muitos há mais de 10 anos</span></div><div class="proof"><strong>Bosch</strong><span>Car Service há cerca de 8 anos</span></div></div></div>
+    <div class="proof-strip"><div class="wrap proof-in"><div class="proof"><strong>40 anos</strong><span>com Carlos Cesar Lapena na administração</span></div><div class="proof"><strong>200+</strong><span>certificados reunidos pela equipe</span></div><div class="proof"><strong>15</strong><span>colaboradores, muitos há mais de 10 anos</span></div><div class="proof"><strong>Bosch</strong><span>Car Service há cerca de 15 anos</span></div></div></div>
 
     <section class="dark-section" id="servicos"><div class="wrap"><div class="section-head"><div><p class="eyebrow">O que a oficina faz</p><h2 class="display">Da revisão ao defeito difícil.</h2></div><p>A base é mecânica, elétrica e eletrônica. No Jeep, entramos nos sistemas que exigem ferramenta e procedimento específicos.</p></div><div class="service-grid"><div class="service-list"><div class="service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="5"/><path d="m14 14 6 6M10 7v6M7 10h6"/></svg>Diagnóstico multi-scanner</div><div class="service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17h16M6 17v3h12v-3M7 17V7h10v10M9 7V4h6v3"/></svg>Elétrica e injeção eletrônica</div><div class="service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M6 8h12M6 16h12"/><circle cx="12" cy="12" r="8"/></svg>Motor 1.3 T270 e 2.0 flex</div><div class="service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 14h18M5 14l2-5h10l2 5M7 17h2m6 0h2"/></svg>Turbodiesel 2.0 Multijet</div><div class="service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16v10H4zM8 7V4m8 3V4M7 12h10"/></svg>Câmbio automático de 9 marchas</div><div class="service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Revisão por quilometragem</div><div class="service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18M5 5l14 14M19 5 5 19"/></svg>Tração 4x4, diferencial e PTU</div><div class="service-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 4h10v5H7zM4 9h16v8H4zM8 17v3m8-3v3"/></svg>Freios, suspensão e alinhamento</div></div><aside class="tech-sheet"><p class="eyebrow">O combinado fica registrado</p><h3>Sem surpresa no orçamento.</h3><p>Você fala com quem avaliou o carro e aprova cada etapa antes do serviço.</p><div class="tech-row"><b>Orçamento</b><span>aprovado antes de executar</span></div><div class="tech-row"><b>Peças</b><span>peça conferida pela oficina</span></div><div class="tech-row"><b>Mobilidade</b><span>leva e traz na cidade</span></div></aside></div></div></section>
 
